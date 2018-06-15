@@ -1,0 +1,5 @@
+rootProject.name = 'answer'
+include 'answer-back'
+include 'answer-common'
+include 'answer-front'
+
