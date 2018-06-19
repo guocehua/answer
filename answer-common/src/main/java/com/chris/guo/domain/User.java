@@ -1,6 +1,7 @@
 package com.chris.guo.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +14,9 @@ public class User extends LongIdEntity {
     private String name;
     private String password;
     private String eamil;
-    private Question question;
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY ,mappedBy = "user")
+    private List<Question> question=new ArrayList<>();
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
     private List<Answer> answer=new ArrayList<>();
 
     public String getName() {
@@ -41,20 +43,14 @@ public class User extends LongIdEntity {
         this.eamil = eamil;
     }
 
-    public Question getQuestion() {
-        return question;
-    }
 
     public List<Answer> getAnswer() {
         return answer;
     }
 
-    public void setAnswer(List<Answer> answer) {
-        this.answer = answer;
-    }
 
-    public void setQuestion(Question question) {
-        this.question = question;
+    public List<Question> getQuestion() {
+        return question;
     }
 
 
