@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.lang.invoke.LambdaConversionException;
 @Repository
-public interface UserRespository extends JpaRepository<User,LambdaConversionException> {
+public interface UserRepository extends JpaRepository<User,LambdaConversionException> {
+    User findByName(String username);
 }
