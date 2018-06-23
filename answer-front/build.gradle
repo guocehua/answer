@@ -1,5 +1,6 @@
 
 dependencies {
+    compile project(':answer-common')
     compile('org.springframework.boot:spring-boot-starter-web')
     runtime('mysql:mysql-connector-java')
     testCompile('org.springframework.boot:spring-boot-starter-test')

@@ -13,7 +13,7 @@ import java.util.List;
 public class User extends LongIdEntity {
     private String name;
     private String password;
-    private String eamil;
+    private String email;
     @OneToMany(fetch = FetchType.LAZY ,mappedBy = "user")
     private List<Question> question=new ArrayList<>();
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
@@ -35,12 +35,12 @@ public class User extends LongIdEntity {
         this.password = password;
     }
 
-    public String getEamil() {
-        return eamil;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEamil(String eamil) {
-        this.eamil = eamil;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 
