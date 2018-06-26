@@ -12,11 +12,21 @@ public class Comment extends LongIdEntity {
     private String content;
     private Integer like;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "answer_id")
     private Answer answer;
-
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     public String getContent() {
         return content;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void setContent(String content) {
