@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 public class Answer extends LongIdEntity {
     private String content;
-    private Integer like;
+    private Integer follow;
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
@@ -27,12 +27,12 @@ public class Answer extends LongIdEntity {
         this.content = content;
     }
 
-    public Integer getLike() {
-        return like;
+    public Integer getFollow() {
+        return follow;
     }
 
-    public void setLike(Integer like) {
-        this.like = like;
+    public void setFollow(Integer follow) {
+        this.follow = follow;
     }
 
     public User getUser() {

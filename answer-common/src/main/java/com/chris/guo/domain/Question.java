@@ -17,7 +17,7 @@ public class Question extends LongIdEntity {
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
-    private Integer like;
+    private Integer follow;
     @OneToMany(mappedBy = "question")
     private List<Answer> answers=new ArrayList<>();
 
@@ -45,12 +45,12 @@ public class Question extends LongIdEntity {
         this.user = user;
     }
 
-    public Integer getLike() {
-        return like;
+    public Integer getFollow() {
+        return follow;
     }
 
-    public void setLike(Integer like) {
-        this.like = like;
+    public void setFollow(Integer follow) {
+        this.follow = follow;
     }
 
     public List<Answer> getAnswers() {
